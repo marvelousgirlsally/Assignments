@@ -8,13 +8,13 @@ $(document).ready(function(){
        $.getJSON(airtable_read_endpoint, function(result) {
               $.each(result.records, function(key,value) {
                   table1_items = [];
-                      table1_items.push(value.fields.Films_Name);
+                      table1_items.push(value.fields.Film_Name);
                       table1_items.push(value.fields.US_Release_Date);
                       table1_items.push(value.fields.Production_Company);
-                      table1_items.push(value.fields.Distributed_By);
+                      table1_items.push(value.fields.Distributed_by);
                       table1_items.push(value.fields.Budget);
                       table1_items.push(value.fields.Box_Office);
-                      table1_items.push(value.fields.Accounting_Rate_Of_Return);
+                      table1_items.push(value.fields.Accounting_Rate_of_Return);
                       table1_dataSet.push(table1_items);
                       console.log(table1_items);
                }); // end .each
@@ -24,13 +24,13 @@ $(document).ready(function(){
                 data: table1_dataSet,
                 retrieve: true,
                 columns: [
-                    { title: "Films Name",
+                    { title: "Film Name",
                       defaultContent:""},
-                    { title: "U.S Release Date",
+                    { title: "US Release Date",
                         defaultContent:"" },
                     { title: "Production Company",
                       defaultContent:"" },
-                    { title: "Distributed By",
+                    { title: "Distributed by",
                       defaultContent:""},
                     { title: "Budget",
                         defaultContent:""},
